@@ -5,12 +5,18 @@ import iconDelete from '../../assets/img/icons/icon-delete.svg'
 import addImg from '../../assets/img/icons/icon-add-img.svg'
 import { Link } from 'react-router-dom'
 import { User } from '../../interfaces/User'
-import { useAppSelector } from '../../hooks/useReduxTyped'
-import { useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch } from '../../hooks/useReduxTyped'
 import { addUser } from '../../features/Users'
+import { MessageBox } from '../MessageBox'
+
+type Message = {
+  type: 'error' | 'success',
+  content: string
+}
 
 export const UserAdd: FC = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState<Message>();
+
   const blankUser = {
     id: 25,
     name: '',
@@ -36,19 +42,19 @@ export const UserAdd: FC = () => {
   ]
 
   // Buttons
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleSubmit = () => {
     if (newUser !== blankUser) {
       dispatch(addUser(newUser));
-      setMessage('User added succesfuly!');
+      setMessage({type: 'success', content: 'User added succesfuly!'});
       setInterval(() => {
         console.log('redirected');
       }, 5000)
     } 
     else 
     {
-      setMessage('You cant add user with no details!')
+      setMessage({type: 'error', content: 'You cant add user with no details!'});
     }
     
   }
@@ -65,8 +71,10 @@ export const UserAdd: FC = () => {
         </div> 
       </header>
 
+      
+
       {message && 
-        <p className='msg msg-success'>{ message }</p>
+        <MessageBox type={ message.type } content={ message.content } />
       }
 
       <div className="user-details">

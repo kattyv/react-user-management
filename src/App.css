@@ -11,9 +11,12 @@
     --clr-neutral-600: #404040; /* rgb(63, 63, 63)    hsl(0, 0, 25) */
     --clr-neutral-900: #0D0D0D; /* rgb(12, 12, 12)    hsl(0, 0, 5) */
 
-    --clr-error: #ed5565;
-    --clr-success: #a0d468;
-    --clr-warning: #ffce54;
+    --clr-error: #da4453;
+    --clr-error-200: #f3c0c5;
+    --clr-success: #8cc152;
+    --clr-success-200: #c1ccb6;
+    --clr-warning: #f6bb42;
+    --clr-warning-200: #ffce54;
 
     --clr-body: var(--clr-neutral-900);
     --clr-prim-heading: var(--clr-neutral-900);
@@ -180,6 +183,7 @@ strong, b {
 .pg-header {
     position: fixed;
     inset: 0;
+    z-index: 2000;
     overflow: hidden;
     height: var(--h-header);
     padding: 10px;
@@ -412,14 +416,26 @@ input.error {
 }
 
 .msg {
+  display: flex;
+  justify-content: space-between;
   margin-block: 20px;
   padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid var(--clr-warning);
+  background-color: var(--clr-warning-200);
   border-radius: 4px;
+  font-size: small;
+}
+.msg-error {
+  border-color: var(--clr-error);
+  background-color: var(--clr-error-200);
 }
 .msg-success {
   border-color: var(--clr-success);
-  color: var(--clr-success);
+  background-color: var(--clr-success-200);
+}
+.msg button {
+  color: inherit;
+  font-size: 1.5em;
 }
 
 table {
