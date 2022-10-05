@@ -23,4 +23,4 @@ Made by using:
 
 ### Credits
 
-- Icons from: (Fluent Ui Icons Filled Vectors)[https://www.svgrepo.com/collection/fluent-ui-icons-filled/1]
+- Icons from: [Fluent Ui Icons Filled Vectors](https://www.svgrepo.com/collection/fluent-ui-icons-filled/1)
