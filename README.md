@@ -4,8 +4,9 @@ Simple User Management System, made on top of React. Custom design. No backend (
 
 Made by using:
 - React (Type Script);
-- React Router v.6
-- Redux / Redux Toolkit 
+- React Hooks (built-in & custom);
+- React Router v.6;
+- Redux / Redux Toolkit;
 - And more...
 
 ### App Features
