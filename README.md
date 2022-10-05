@@ -16,6 +16,9 @@ Made by using:
 - [x] User details page
 - [ ] User Edit (Patch properties) *(TODO)*
 - [ ] Add New User Page *(TODO)*
+- [ ] Search functionality *(TODO)*
+- [ ] Responsive Design *(Finish)*
+- [ ] Theme Switcher *(TODO)*
 
 ### Project Preview
 
