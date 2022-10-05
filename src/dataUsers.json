@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "John",
+        "surname": "Smith",
+        "email": "john.smith@domain.com",
+        "phone": "123-555-12-1234-17",
+        "imgURL": "https://i.pravatar.cc/160?img=15",
+        "username": "john.smith",
+        "password": "123",
+        "role": "Admin",
+        "isActive": true,
+        "permissions": []
+    },
+    {
+        "id": 2,
+        "name": "Janina",
+        "surname": "Morisson",
+        "email": "jane.morrison@domain.com",
+        "phone": "123-555-12-1234-17",
+        "imgURL": "https://i.pravatar.cc/160?img=25",
+        "username": "jane.morisson",
+        "password": "123",
+        "role": "User",
+        "isActive": false,
+        "permissions": [1, 2]
+    },{
+        "id": 3,
+        "name": "Sample",
+        "surname": "Admin",
+        "email": "admin@admin.com",
+        "phone": "234",
+        "username": "Admin",
+        "password": "1234",
+        "role": "Admin",
+        "isActive": true,
+        "permissions": [1, 2, 3]
+    },
+    {
+        "id": 4,
+        "name": "Janina",
+        "surname": "Morisson",
+        "email": "jane.morrison@domain.com",
+        "phone": "123-555-12-1234-17",
+        "imgURL": "https://i.pravatar.cc/160?img=7",
+        "username": "jane.morisson",
+        "password": "123",
+        "role": "User",
+        "isActive": false,
+        "permissions": [3]
+    }
+]
