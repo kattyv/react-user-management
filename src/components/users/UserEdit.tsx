@@ -8,13 +8,9 @@ import { updateUser, deleteUser } from '../../features/Users';
 
 export const UserEdit: FC = () => {
   const users = useAppSelector((state) => state.users.value);
-  const permissions = useAppSelector((state) => state.permissions.value);
-
   const { id } = useParams();
   const userID: number = Number(id);
   const user: User | undefined = users.find(item => item.id === userID);
-
-  //const userPermissions = permissions.map(el => ({...el, isOn: (user?.permissions.includes(el.id))}));
 
   const dispatch = useAppDispatch();
 
