@@ -2,10 +2,6 @@ import React, { FC } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { User, UserRole } from '../../interfaces/User';
 import placeholderAvatar from '../../assets/img/avatar-placeholder.png'
-import iconBack from '../../assets/img/icons/icon-arrow-left.svg'
-import iconDelete from '../../assets/img/icons/icon-delete.svg'
-import iconEdit from '../../assets/img/icons/icon-edit.svg'
-import addImg from '../../assets/img/icons/icon-add-img.svg'
 import { useAppSelector } from '../../hooks/useReduxTyped';
 import { useAppDispatch } from '../../hooks/useReduxTyped';
 import { updateUser, deleteUser } from '../../features/Users';
@@ -18,7 +14,7 @@ export const UserEdit: FC = () => {
   const userID: number = Number(id);
   const user: User | undefined = users.find(item => item.id === userID);
 
-  const userPermissions = permissions.map(el => ({...el, isOn: (user?.permissions.includes(el.id))}));
+  //const userPermissions = permissions.map(el => ({...el, isOn: (user?.permissions.includes(el.id))}));
 
   const dispatch = useAppDispatch();
 
@@ -29,8 +25,8 @@ export const UserEdit: FC = () => {
           <>
             <header className='pg-title'>
                 <div className='inline-group'>
-                  <Link to="/users" className='btn btn-round'>
-                    <img src={iconBack} alt="Back to users list" className='icon' />
+                  <Link to="/users" className='btn btn-round' title="Back to users list">
+                    <i className="icon icon-back"></i>
                   </Link>
                 
                   <h1>User not found</h1>
@@ -51,8 +47,8 @@ export const UserEdit: FC = () => {
           <>
             <header className='pg-title'>
               <div className='inline-group'>
-                <Link to="/users" className='btn btn-round'>
-                  <img src={iconBack} alt="Back to users list" className='icon' />
+                <Link to="/users" className='btn btn-round' title="Back to users list">
+                  <i className="icon icon-back"></i>
                 </Link>
               
                 <h1>
@@ -71,17 +67,17 @@ export const UserEdit: FC = () => {
               {user?.imgURL 
                 ? (
                   <button className='btn btn-icon'>
-                    <img src={iconEdit} className='icon' />
+                    <i className="icon icon-edit"></i>
                   </button>
                 ) : (
                   <button className='btn btn-icon'>
-                    <img src={addImg} className='icon' />
+                    <i className="icon icon-add-img"></i>
                   </button>
                 ) 
               }
 
               <button className='btn btn-icon'>
-                <img src={iconDelete} className='icon' />
+                <i className="icon icon-delete"></i>
               </button>
               </div>
 
@@ -121,9 +117,9 @@ export const UserEdit: FC = () => {
                     <p>&nbsp;</p>
 
                     <button className='btn btn-default'>
-                        <img src={iconEdit} className='icon' />
-                        Edit information
-                      </button>
+                      <i className="icon icon-edit"></i>
+                      Edit information
+                    </button>
                   </div>
 
                   <div className="column">
@@ -147,26 +143,16 @@ export const UserEdit: FC = () => {
                 <h2>Permissions</h2>
 
                 <ul role="list">
-                  {userPermissions.map((item, index) => (
+                  {user.permissions.map((perm, index) => (
                     <li key={index}>
-                      <span className={`ball ${item.isOn ? 'on' : 'off'}`}></span>
+                      <span className={`ball ${perm.isOn ? 'on' : 'off'}`}></span>
                       {" "}
-                      {item.label} 
+                      Permission ID: {perm.id} 
                     </li>
                   ))}
                 </ul>
               </div>
             </div> 
-            
-          
-          <div className="userDetails">
- 
-            <div className="col-half">
-              
-            </div>
-
-            
-          </div>
           </>
         )
       }

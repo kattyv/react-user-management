@@ -2,31 +2,27 @@ export interface Person {
     name:       string;
     surname:    string;
     email:      string;
-    phone?:     string | undefined;
-    imgURL?:    string | undefined;
+    phone?:     string | null;
+    imgURL?:    string | null;
 }
 
-export type UserRole = "Admin" | "User" | string; //TODO: Remove 'string' type
+export type UserRole = "Administrator" | "User";
+/*
+export enum UserRoleEnum {
+    user = "User",
+    admin = "Administrator"
+}
+*/
 
-export interface User1 extends Person {
+export interface User extends Person {
     id:             number;
     username:       string;
     password:       string;
     role:           UserRole;
     isActive:       boolean;
-    permissions:    Array<number>;
+    permissions:    {
+        id: number,
+        isOn: boolean
+    }[];
 }
 
-export interface User {
-    id:         number,
-    name:       string,
-    surname:    string,
-    email:      string,
-    phone?:     string,
-    imgURL?:    string,
-    username:       string,
-    password:   string,
-    role:           UserRole,
-    isActive:       boolean,
-    permissions:    number[]
-}

@@ -10,7 +10,12 @@
         "password": "123",
         "role": "Administrator",
         "isActive": true,
-        "permissions": []
+        "permissions": [
+            {"id": 1, "isOn": true},
+            {"id": 2, "isOn": true},
+            {"id": 3, "isOn": true},
+            {"id": 4, "isOn": false}
+        ]
     },
     {
         "id": 2,
@@ -23,7 +28,12 @@
         "password": "hash12345",
         "role": "User",
         "isActive": false,
-        "permissions": [1, 2]
+        "permissions": [
+            {"id": 1, "isOn": true},
+            {"id": 2, "isOn": true},
+            {"id": 3, "isOn": false},
+            {"id": 4, "isOn": false}
+        ]
     },{
         "id": 3,
         "name": "Sample",
@@ -34,7 +44,12 @@
         "password": "1234",
         "role": "Administrator",
         "isActive": true,
-        "permissions": [1, 2, 3]
+        "permissions": [
+            {"id": 1, "isOn": true},
+            {"id": 2, "isOn": true},
+            {"id": 3, "isOn": true},
+            {"id": 4, "isOn": true}
+        ]
     },
     {
         "id": 4,
@@ -47,6 +62,11 @@
         "password": "genericpassword",
         "role": "User",
         "isActive": false,
-        "permissions": [3]
+        "permissions": [
+            {"id": 1, "isOn": false},
+            {"id": 2, "isOn": true},
+            {"id": 3, "isOn": false},
+            {"id": 4, "isOn": false}
+        ]
     }
 ]

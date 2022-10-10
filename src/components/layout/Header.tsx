@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import appLogo from '../../assets/img/logo.svg'
-import iconExit from '../../assets/img/icons/icon-exit.svg'
 import { useAppDispatch, useAppSelector } from '../../hooks/useReduxTyped'
 import { resetAuth } from '../../features/Auth'
 
@@ -42,7 +41,7 @@ export const Header = () => {
             <> 
               Hello, {user?.name} {user?.surname}
               <button onClick={ handleLogout } className="btn btn-icon">
-                <img src={ iconExit } alt="Logout" className='icon' />
+                <i className="icon icon-exit"></i>
               </button>
             </>
           }

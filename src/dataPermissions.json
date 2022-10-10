@@ -1,22 +1,18 @@
 [
     {
         "id": 1,
-        "value": "perm1",
         "label": "Can create new users"
     },
     {
         "id": 2,
-        "value": "perm2",
         "label": "Can delete existing users"
     },
     {
         "id": 3,
-        "value": "perm3",
         "label": "Can edit existing users"
     },
     {
         "id": 4,
-        "value": "perm4",
         "label": "Manage users"
     }
 ]

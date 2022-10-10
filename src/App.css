@@ -279,10 +279,48 @@ strong, b {
   } 
 }
 
+/* Icons */
+.icon {
+  display: inline-block;
+  width: 24px;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.icon-back {
+  background-image: url('./assets//img//icons/icon-arrow-left.svg');
+}
+.icon-edit {
+  background-image: url('./assets/img/icons/icon-edit.svg');
+}
+.icon-delete {
+  background-image: url('./assets/img/icons/icon-delete.svg');
+}
+.icon-add-img {
+  background-image: url('./assets/img/icons/icon-add-img.svg');
+}
+.icon-add-user {
+  background-image: url('./assets/img/icons/icon-user-add.svg');
+}
+.icon-search {
+  background-image: url('./assets/img/icons/icon-search.svg');
+}
+.icon-close {
+  background-image: url('./assets/img/icons/icon-close.svg');
+}
+.icon-exit {
+  background-image: url('./assets/img/icons/icon-exit.svg');
+}
+.icon-loading {
+  background-image: url('./assets/img/icons/icon-loading.svg');
+}
+
 /* FORMS */
 input,
 select,
 textarea {
+  max-width: 100%;
   padding: 3px 6px;
   background-color: #fff;
   border: 1px solid var(--clr-neutral-300);
@@ -300,21 +338,31 @@ input[type="radio"] {
   accent-color: var(--clr-accent);
 }
 
-label {
+label, 
+.label {
   display: block;
   font-size: var(--fs-sm);
   font-weight: var(--fw-500);
   color: var(--clr-neutral-600);
 }
-label + label {
+label + label,
+h2 + label,
+.inline-group label {
   font-weight: var(--fw-300);
   color: var(--clr-neutral-900);
+}
+label.req::after,
+.label.req::after {
+  content: ' *';
+  color: var(--clr-error);
 }
 
 input + label,
 select + label,
 textarea + label,
-.text-error + label {
+.text-error + label,
+select + .label,
+.text-error + .label {
   margin-top: 20px;
 } 
 
@@ -353,7 +401,6 @@ button {
 }
 .btn .icon {
   width: 20px;
-  height: 20px;
   opacity: 0.7;
   transition: 0.2s all ease-in;
 }
@@ -378,7 +425,6 @@ button {
 .btn-round .icon,
 .btn-icon .icon {
   width: 24px;
-  height: 24px;
 }
 .btn-round:hover .icon {
   transform: rotate(-360deg);
@@ -386,6 +432,18 @@ button {
 
 .btn + .btn {
   margin-left: 10px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--clr-neutral-200);
+}
+.form-footer p {
+  font-size: small;
 }
 
 .form-group {

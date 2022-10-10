@@ -2,9 +2,6 @@ import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/useReduxTyped';
 import { UserListSingle } from './UserListSingle';
-import iconAddUser from '../../assets/img/icons/icon-user-add.svg'
-import iconSearch from '../../assets/img/icons/icon-search.svg'
-import iconClose from '../../assets/img/icons/icon-close.svg'
 
 export const UserList: FC = () => {
   //const users = useSelector((state: RootState) => state.users.value);
@@ -17,7 +14,7 @@ export const UserList: FC = () => {
         <div className="inline-group">
           <h1>Users</h1>
           <Link to="/users/new" className='btn btn-round' title='Add New User'>
-            <img src={iconAddUser} alt="" className='icon' />
+            <i className="icon icon-add-user"></i>
           </Link>
         </div>
         
@@ -31,12 +28,12 @@ export const UserList: FC = () => {
           {searchText === "" 
             ? (
               <button className='btn' onClick={ () => window.alert('Not working') }>
-                <img src={ iconSearch } alt="" className='icon' />
+                <i className="icon icon-search"></i>
               </button>
             )
             : (
               <button className='btn' onClick={ () => window.alert('Not working') }>
-                <img src={ iconClose } alt="" className='icon' />
+                <i className="icon icon-close"></i>
               </button>
             )
           }
@@ -70,16 +67,6 @@ export const UserList: FC = () => {
             users?.map(user => (
               <UserListSingle 
                 key={user.id} 
-                /*
-                id = { user.id }
-                name = { user.name }
-                surname = { user.surname }
-                email = { user.email }
-                phone = { user.phone }
-                imgURL = { user.imgURL }
-                role = {user.role as UserRole}
-                isActive = { user.isActive }
-                */
                {...user}
               />
             ))
